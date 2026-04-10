@@ -2,8 +2,8 @@ import { GameStateDiff, EventSummary } from './types';
 
 export const mockEvents: EventSummary[] = [
   { eventId: 15358058, eventName: "|Nott'm Forest| |v| |Porto|" },
-  { eventId: 10294831, eventName: '|Manchester United| |v| |Liverpool|' },
-  { eventId: 8721456, eventName: '|Barcelona| |v| |Real Madrid|' },
+  { eventId: 10294831, eventName: '|Arsenal| |v| |PSG|' },
+  { eventId: 8721456, eventName: '|Leeds United| |v| |Burnley|' },
 ];
 
 const now = new Date();
@@ -259,7 +259,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
   10294831: [
     {
       event_id: 10294831,
-      event_name: '|Manchester United| |v| |Liverpool|',
+      event_name: '|Arsenal| |v| |PSG|',
       timestamp: ts(120),
       diff_type: 'INITIAL' as any,
       changes: [],
@@ -267,7 +267,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 10294831,
-      event_name: '|Manchester United| |v| |Liverpool|',
+      event_name: '|Arsenal| |v| |PSG|',
       timestamp: ts(110),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -291,7 +291,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 10294831,
-      event_name: '|Manchester United| |v| |Liverpool|',
+      event_name: '|Arsenal| |v| |PSG|',
       timestamp: ts(90),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -307,7 +307,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           path: '/game_state/goals/0',
           new_value: {
             team: 'away',
-            player: 'Salah',
+            player: 'Dembélé',
             minute: 22,
             type: 'penalty',
           },
@@ -336,7 +336,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 10294831,
-      event_name: '|Manchester United| |v| |Liverpool|',
+      event_name: '|Arsenal| |v| |PSG|',
       timestamp: ts(70),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -352,7 +352,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           path: '/game_state/goals/1',
           new_value: {
             team: 'home',
-            player: 'Rashford',
+            player: 'Saka',
             minute: 58,
             type: 'open_play',
           },
@@ -384,7 +384,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
   8721456: [
     {
       event_id: 8721456,
-      event_name: '|Barcelona| |v| |Real Madrid|',
+      event_name: '|Leeds United| |v| |Burnley|',
       timestamp: ts(200),
       diff_type: 'INITIAL' as any,
       changes: [],
@@ -392,7 +392,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 8721456,
-      event_name: '|Barcelona| |v| |Real Madrid|',
+      event_name: '|Leeds United| |v| |Burnley|',
       timestamp: ts(190),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -425,7 +425,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 8721456,
-      event_name: '|Barcelona| |v| |Real Madrid|',
+      event_name: '|Leeds United| |v| |Burnley|',
       timestamp: ts(170),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -441,7 +441,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           path: '/game_state/goals/0',
           new_value: {
             team: 'home',
-            player: 'Yamal',
+            player: 'Bamford',
             minute: 85,
             type: 'open_play',
           },
