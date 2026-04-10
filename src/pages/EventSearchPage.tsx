@@ -34,12 +34,13 @@ export const EventSearchPage: React.FC = () => {
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchValue.trim()) return;
 
     try {
       setLoading(true);
       setError(undefined);
-      const results = await diffsApi.searchEvents(searchValue, 100);
+      const results = searchValue.trim()
+        ? await diffsApi.searchEvents(searchValue, 100)
+        : await diffsApi.getAllEvents(100);
       setEvents(results);
       setSearched(true);
     } catch (err) {
