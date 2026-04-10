@@ -1,7 +1,7 @@
 import { GameStateDiff, EventSummary } from './types';
 
 export const mockEvents: EventSummary[] = [
-  { eventId: 15358058, eventName: '|Iran (W)| |v| |Philippines (W)|' },
+  { eventId: 15358058, eventName: "|Nott'm Forest| |v| |Porto|" },
   { eventId: 10294831, eventName: '|Manchester United| |v| |Liverpool|' },
   { eventId: 8721456, eventName: '|Barcelona| |v| |Real Madrid|' },
 ];
@@ -13,7 +13,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
   15358058: [
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(60),
       diff_type: 'INITIAL' as any,
       changes: [],
@@ -21,7 +21,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(55),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -45,7 +45,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(45),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -61,7 +61,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           path: '/game_state/goals/0',
           new_value: {
             team: 'home',
-            player: 'Khodayari',
+            player: 'Wood',
             minute: 12,
             type: 'open_play',
           },
@@ -80,7 +80,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(35),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -96,7 +96,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           path: '/game_state/yellow_cards/0',
           new_value: {
             team: 'away',
-            player: 'Bolden',
+            player: 'Pepe',
             minute: 23,
           },
           category: 'CARDS' as any,
@@ -116,7 +116,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(20),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -138,18 +138,18 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           operation: 'ADD' as any,
           path: '/game_state/goals/1',
           new_value: {
-            team: 'home',
-            player: 'Ghomi',
+            team: 'away',
+            player: 'Evanilson',
             minute: 42,
-            type: 'free_kick',
+            type: 'header',
           },
           category: 'GOALS' as any,
         },
         {
           operation: 'REPLACE' as any,
-          path: '/game_state/goals/home_score',
-          previous_value: 1,
-          new_value: 2,
+          path: '/game_state/goals/away_score',
+          previous_value: 0,
+          new_value: 1,
           category: 'GOALS' as any,
         },
       ],
@@ -158,7 +158,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(10),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -180,9 +180,9 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           operation: 'ADD' as any,
           path: '/game_state/substitutions/0',
           new_value: {
-            team: 'away',
-            player_off: 'Bolden',
-            player_on: 'Castaneda',
+            team: 'home',
+            player_off: 'Danilo',
+            player_on: 'Dominguez',
             minute: 46,
           },
           category: 'SUBSTITUTIONS' as any,
@@ -203,7 +203,7 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
     },
     {
       event_id: 15358058,
-      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      event_name: "|Nott'm Forest| |v| |Porto|",
       timestamp: ts(2),
       diff_type: 'UPDATE' as any,
       changes: [
@@ -218,8 +218,8 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
           operation: 'ADD' as any,
           path: '/game_state/goals/2',
           new_value: {
-            team: 'away',
-            player: 'Castaneda',
+            team: 'home',
+            player: 'Gibbs-White',
             minute: 73,
             type: 'open_play',
           },
@@ -227,17 +227,17 @@ export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
         },
         {
           operation: 'REPLACE' as any,
-          path: '/game_state/goals/away_score',
-          previous_value: 0,
-          new_value: 1,
+          path: '/game_state/goals/home_score',
+          previous_value: 1,
+          new_value: 2,
           category: 'GOALS' as any,
         },
         {
           operation: 'ADD' as any,
           path: '/game_state/red_cards/0',
           new_value: {
-            team: 'home',
-            player: 'Hosseini',
+            team: 'away',
+            player: 'Pepe',
             minute: 76,
             reason: 'second_yellow',
           },
