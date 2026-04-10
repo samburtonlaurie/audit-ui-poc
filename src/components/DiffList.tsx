@@ -9,7 +9,6 @@ interface DiffListProps {
   error?: string;
   expandedDiffIds?: Set<string>;
   onToggleDiff?: (diffKey: string) => void;
-  getDiffKey?: (diff: GameStateDiff) => string;
 }
 
 export const DiffList: React.FC<DiffListProps> = ({
@@ -18,7 +17,6 @@ export const DiffList: React.FC<DiffListProps> = ({
   error,
   expandedDiffIds = new Set(),
   onToggleDiff = () => {},
-  getDiffKey = (diff) => `${diff.event_id}-${diff.timestamp}`
 }) => {
   const [filterCategory, setFilterCategory] = useState<ChangeCategory | 'ALL'>('ALL');
 
