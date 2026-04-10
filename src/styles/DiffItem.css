@@ -1,0 +1,130 @@
+.diff-item {
+  background-color: #2d2d44;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid #646cff;
+  transition: all 0.2s ease;
+}
+
+.diff-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.diff-item--initial {
+  border-left-color: #51cf66;
+}
+
+.diff-item--update {
+  border-left-color: #ffd43b;
+}
+
+.diff-item--no_change {
+  border-left-color: #888;
+}
+
+.diff-header {
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.diff-header:hover {
+  background-color: #35354e;
+}
+
+.diff-header-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.diff-badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.diff-badge--initial {
+  background-color: #51cf66;
+  color: #1a1a1a;
+}
+
+.diff-badge--update {
+  background-color: #ffd43b;
+  color: #1a1a1a;
+}
+
+.diff-badge--no_change {
+  background-color: #aaa;
+  color: #1a1a1a;
+}
+
+.diff-event-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.diff-time {
+  color: #aaa;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.diff-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #aaa;
+}
+
+.change-count {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+}
+
+.expand-icon {
+  transition: transform 0.2s ease;
+}
+
+.diff-body {
+  padding: 1rem;
+  border-top: 1px solid #444;
+  background-color: #242424;
+}
+
+.no-changes {
+  color: #888;
+  text-align: center;
+  padding: 1rem;
+}
+
+.changes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.diff-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  color: #888;
+}
+
+.diff-footer small {
+  font-size: 0.8rem;
+}
+

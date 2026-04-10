@@ -1,0 +1,82 @@
+.event-detail-page {
+  width: 100%;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #444;
+}
+
+.back-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #2d2d44;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #aaa;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #3d3d54;
+  border-color: #646cff;
+  color: #646cff;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.8rem;
+}
+
+.event-info p {
+  margin: 0;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.detail-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #2d2d44;
+  border-radius: 8px;
+  border-left: 4px solid #646cff;
+}
+
+.auto-refresh {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auto-refresh input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+

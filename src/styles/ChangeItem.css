@@ -1,0 +1,135 @@
+.change-item {
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  border-left: 3px solid #646cff;
+}
+
+.change-item--add {
+  border-left-color: #51cf66;
+}
+
+.change-item--remove {
+  border-left-color: #ff6b6b;
+}
+
+.change-item--replace {
+  border-left-color: #ffd43b;
+}
+
+.change-item--move {
+  border-left-color: #845ef7;
+}
+
+.change-item--copy {
+  border-left-color: #00d9ff;
+}
+
+.change-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.operation-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.operation-badge--add {
+  background-color: #51cf66;
+  color: #1a1a1a;
+}
+
+.operation-badge--remove {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.operation-badge--replace {
+  background-color: #ffd43b;
+  color: #1a1a1a;
+}
+
+.operation-badge--move {
+  background-color: #845ef7;
+  color: #fff;
+}
+
+.operation-badge--copy {
+  background-color: #00d9ff;
+  color: #1a1a1a;
+}
+
+.category-badge {
+  padding: 0.25rem 0.6rem;
+  background-color: #2d2d44;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #646cff;
+}
+
+.change-path {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #aaa;
+  word-break: break-all;
+}
+
+.change-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+/* For REPLACE operations, show two columns side by side */
+.change-values--compare {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .change-values--compare {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-block {
+  background-color: #2d2d44;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.previous-value {
+  border-left: 2px solid #ff6b6b;
+}
+
+.new-value {
+  border-left: 2px solid #51cf66;
+}
+
+.new-value--full {
+  grid-column: 1 / -1;
+}
+
+.value-block strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+}
+
+.value-block pre {
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #ddd;
+}
+

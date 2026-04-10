@@ -1,0 +1,470 @@
+import { GameStateDiff, EventSummary } from './types';
+
+export const mockEvents: EventSummary[] = [
+  { eventId: 15358058, eventName: '|Iran (W)| |v| |Philippines (W)|' },
+  { eventId: 10294831, eventName: '|Manchester United| |v| |Liverpool|' },
+  { eventId: 8721456, eventName: '|Barcelona| |v| |Real Madrid|' },
+];
+
+const now = new Date();
+const ts = (minutesAgo: number) => new Date(now.getTime() - minutesAgo * 60000).toISOString();
+
+export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
+  15358058: [
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(60),
+      diff_type: 'INITIAL' as any,
+      changes: [],
+      current_message_hash: 'a1b2c3d4e5f60718',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(55),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:00',
+          new_value: '00:01',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/match_status',
+          previous_value: 'PreMatch',
+          new_value: 'InProgress',
+          category: 'GAME_STATUS' as any,
+        },
+      ],
+      previous_message_hash: 'a1b2c3d4e5f60718',
+      current_message_hash: 'b2c3d4e5f6071829',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(45),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:01',
+          new_value: '15:32',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/0',
+          new_value: {
+            team: 'home',
+            player: 'Khodayari',
+            minute: 12,
+            type: 'open_play',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/home_score',
+          previous_value: 0,
+          new_value: 1,
+          category: 'GOALS' as any,
+        },
+      ],
+      previous_message_hash: 'b2c3d4e5f6071829',
+      current_message_hash: 'c3d4e5f607182930',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(35),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '15:32',
+          new_value: '28:45',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/yellow_cards/0',
+          new_value: {
+            team: 'away',
+            player: 'Bolden',
+            minute: 23,
+          },
+          category: 'CARDS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/corners/0',
+          new_value: {
+            team: 'home',
+            minute: 27,
+          },
+          category: 'CORNERS' as any,
+        },
+      ],
+      previous_message_hash: 'c3d4e5f607182930',
+      current_message_hash: 'd4e5f60718293041',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(20),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '28:45',
+          new_value: '45:00',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/period',
+          previous_value: 'FirstHalf',
+          new_value: 'HalfTime',
+          category: 'GAME_STATUS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/1',
+          new_value: {
+            team: 'home',
+            player: 'Ghomi',
+            minute: 42,
+            type: 'free_kick',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/home_score',
+          previous_value: 1,
+          new_value: 2,
+          category: 'GOALS' as any,
+        },
+      ],
+      previous_message_hash: 'd4e5f60718293041',
+      current_message_hash: 'e5f6071829304152',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(10),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '45:00',
+          new_value: '52:18',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/period',
+          previous_value: 'HalfTime',
+          new_value: 'SecondHalf',
+          category: 'GAME_STATUS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/substitutions/0',
+          new_value: {
+            team: 'away',
+            player_off: 'Bolden',
+            player_on: 'Castaneda',
+            minute: 46,
+          },
+          category: 'SUBSTITUTIONS' as any,
+        },
+        {
+          operation: 'REMOVE' as any,
+          path: '/game_state/free_kicks/2',
+          previous_value: {
+            team: 'away',
+            minute: 38,
+            type: 'indirect',
+          },
+          category: 'FREE_KICKS' as any,
+        },
+      ],
+      previous_message_hash: 'e5f6071829304152',
+      current_message_hash: 'f607182930415263',
+    },
+    {
+      event_id: 15358058,
+      event_name: '|Iran (W)| |v| |Philippines (W)|',
+      timestamp: ts(2),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '52:18',
+          new_value: '78:05',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/2',
+          new_value: {
+            team: 'away',
+            player: 'Castaneda',
+            minute: 73,
+            type: 'open_play',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/away_score',
+          previous_value: 0,
+          new_value: 1,
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/red_cards/0',
+          new_value: {
+            team: 'home',
+            player: 'Hosseini',
+            minute: 76,
+            reason: 'second_yellow',
+          },
+          category: 'CARDS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/event_configuration/allow_live_betting',
+          previous_value: true,
+          new_value: false,
+          category: 'CONFIGURATION' as any,
+        },
+      ],
+      previous_message_hash: 'f607182930415263',
+      current_message_hash: '0718293041526374',
+    },
+  ],
+
+  10294831: [
+    {
+      event_id: 10294831,
+      event_name: '|Manchester United| |v| |Liverpool|',
+      timestamp: ts(120),
+      diff_type: 'INITIAL' as any,
+      changes: [],
+      current_message_hash: 'aa11bb22cc33dd44',
+    },
+    {
+      event_id: 10294831,
+      event_name: '|Manchester United| |v| |Liverpool|',
+      timestamp: ts(110),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/match_status',
+          previous_value: 'PreMatch',
+          new_value: 'InProgress',
+          category: 'GAME_STATUS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:00',
+          new_value: '00:01',
+          category: 'CLOCK' as any,
+        },
+      ],
+      previous_message_hash: 'aa11bb22cc33dd44',
+      current_message_hash: 'bb22cc33dd44ee55',
+    },
+    {
+      event_id: 10294831,
+      event_name: '|Manchester United| |v| |Liverpool|',
+      timestamp: ts(90),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:01',
+          new_value: '34:12',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/0',
+          new_value: {
+            team: 'away',
+            player: 'Salah',
+            minute: 22,
+            type: 'penalty',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/away_score',
+          previous_value: 0,
+          new_value: 1,
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/penalties/0',
+          new_value: {
+            team: 'away',
+            minute: 21,
+            result: 'scored',
+          },
+          category: 'PENALTIES' as any,
+        },
+      ],
+      previous_message_hash: 'bb22cc33dd44ee55',
+      current_message_hash: 'cc33dd44ee55ff66',
+    },
+    {
+      event_id: 10294831,
+      event_name: '|Manchester United| |v| |Liverpool|',
+      timestamp: ts(70),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '34:12',
+          new_value: '65:30',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/1',
+          new_value: {
+            team: 'home',
+            player: 'Rashford',
+            minute: 58,
+            type: 'open_play',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/home_score',
+          previous_value: 0,
+          new_value: 1,
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/var_incidents/0',
+          new_value: {
+            minute: 57,
+            type: 'goal_check',
+            decision: 'goal_stands',
+          },
+          category: 'VAR_INCIDENTS' as any,
+        },
+      ],
+      previous_message_hash: 'cc33dd44ee55ff66',
+      current_message_hash: 'dd44ee55ff667788',
+    },
+  ],
+
+  8721456: [
+    {
+      event_id: 8721456,
+      event_name: '|Barcelona| |v| |Real Madrid|',
+      timestamp: ts(200),
+      diff_type: 'INITIAL' as any,
+      changes: [],
+      current_message_hash: 'ff00ff00ff00ff00',
+    },
+    {
+      event_id: 8721456,
+      event_name: '|Barcelona| |v| |Real Madrid|',
+      timestamp: ts(190),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/match_status',
+          previous_value: 'PreMatch',
+          new_value: 'InProgress',
+          category: 'GAME_STATUS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:00',
+          new_value: '00:01',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/throw_ins/0',
+          new_value: {
+            team: 'home',
+            minute: 1,
+          },
+          category: 'THROW_INS' as any,
+        },
+      ],
+      previous_message_hash: 'ff00ff00ff00ff00',
+      current_message_hash: 'ee11ee11ee11ee11',
+    },
+    {
+      event_id: 8721456,
+      event_name: '|Barcelona| |v| |Real Madrid|',
+      timestamp: ts(170),
+      diff_type: 'UPDATE' as any,
+      changes: [
+        {
+          operation: 'REPLACE' as any,
+          path: '/event/clock/match_time',
+          previous_value: '00:01',
+          new_value: '88:44',
+          category: 'CLOCK' as any,
+        },
+        {
+          operation: 'ADD' as any,
+          path: '/game_state/goals/0',
+          new_value: {
+            team: 'home',
+            player: 'Yamal',
+            minute: 85,
+            type: 'open_play',
+          },
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/goals/home_score',
+          previous_value: 0,
+          new_value: 1,
+          category: 'GOALS' as any,
+        },
+        {
+          operation: 'REPLACE' as any,
+          path: '/game_state/game_status/period',
+          previous_value: 'SecondHalf',
+          new_value: 'FullTime',
+          category: 'GAME_STATUS' as any,
+        },
+      ],
+      previous_message_hash: 'ee11ee11ee11ee11',
+      current_message_hash: 'dd22dd22dd22dd22',
+    },
+  ],
+};
+
