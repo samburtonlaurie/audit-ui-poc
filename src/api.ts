@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GameStateDiff, EventSummary } from './types';
+import { AuditDiff, EventSummary } from './types';
 import { mockEvents, mockDiffsByEvent } from './mockData';
 
 const API_BASE = '/api/v1/diffs';
@@ -28,7 +28,7 @@ async function tryApi<T>(apiFn: () => Promise<T>, mockFn: () => T): Promise<T> {
 }
 
 export const diffsApi = {
-  getDiffHistory: (eventId: number, limit: number = 100): Promise<GameStateDiff[]> =>
+  getDiffHistory: (eventId: number, limit: number = 100): Promise<AuditDiff[]> =>
     tryApi(
       () => client.get(`/event/${eventId}`, { params: { limit } }).then(r => r.data),
       () => (mockDiffsByEvent[eventId] ?? []).slice(0, limit),
@@ -54,7 +54,7 @@ export const diffsApi = {
         .slice(0, limit),
     ),
 
-  searchByEventName: (query: string, limit: number = 100): Promise<GameStateDiff[]> =>
+  searchByEventName: (query: string, limit: number = 100): Promise<AuditDiff[]> =>
     tryApi(
       () => client.get('/search', { params: { query, limit } }).then(r => r.data),
       () => Object.values(mockDiffsByEvent)

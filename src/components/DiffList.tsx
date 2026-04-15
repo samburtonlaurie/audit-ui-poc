@@ -1,10 +1,10 @@
 import { useState, useMemo } from 'react';
-import { GameStateDiff, ChangeCategory } from '../types';
+import { AuditDiff, ChangeCategory } from '../types';
 import { DiffItem } from './DiffItem';
 import '../styles/DiffList.css';
 
 interface DiffListProps {
-  diffs: GameStateDiff[];
+  diffs: AuditDiff[];
   loading: boolean;
   error?: string;
   expandedDiffIds?: Set<string>;

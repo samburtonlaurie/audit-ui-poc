@@ -1,4 +1,4 @@
-import { GameStateDiff, EventSummary } from './types';
+import { AuditDiff, EventSummary } from './types';
 
 export const mockEvents: EventSummary[] = [
   { eventId: 15358058, eventName: "|Nott'm Forest| |v| |Porto|" },
@@ -9,7 +9,7 @@ export const mockEvents: EventSummary[] = [
 const now = new Date();
 const ts = (minutesAgo: number) => new Date(now.getTime() - minutesAgo * 60000).toISOString();
 
-export const mockDiffsByEvent: Record<number, GameStateDiff[]> = {
+export const mockDiffsByEvent: Record<number, AuditDiff[]> = {
   15358058: [
     {
       event_id: 15358058,

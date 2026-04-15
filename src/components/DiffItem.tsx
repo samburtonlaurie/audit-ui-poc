@@ -1,9 +1,9 @@
-import { GameStateDiff } from '../types';
+import { AuditDiff } from '../types';
 import { ChangeItem } from './ChangeItem';
 import '../styles/DiffItem.css';
 
 interface DiffItemProps {
-  diff: GameStateDiff;
+  diff: AuditDiff;
   isExpanded?: boolean;
   onToggle?: () => void;
 }

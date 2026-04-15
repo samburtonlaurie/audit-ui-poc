@@ -84,7 +84,7 @@ src/
 ## Type Safety
 
 All types are synchronized with the Kotlin backend:
-- `GameStateDiff` ↔ backend DTO
+- `SasaDiff` ↔ backend DTO
 - `EventSummary` ↔ backend DTO
 - `ChangeRecord` ↔ backend DTO
 - All enums match backend exactly

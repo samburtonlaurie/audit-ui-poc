@@ -39,7 +39,7 @@ export interface ChangeRecord {
   category: ChangeCategory;
 }
 
-export interface GameStateDiff {
+export interface AuditDiff {
   event_id: number;
   event_name: string;
   timestamp: string;
