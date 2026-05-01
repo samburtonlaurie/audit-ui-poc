@@ -12,6 +12,8 @@ const client = axios.create({
   timeout: 3000,
 });
 
+
+
 let useMock = false;
 
 async function tryApi<T>(apiFn: () => Promise<T>, mockFn: () => T): Promise<T> {
