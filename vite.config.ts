@@ -8,8 +8,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8081',
+        target: 'https://srere-nxt.soccer-dev.aws.private',
         changeOrigin: true,
+        secure: false,
       }
     }
   }
